@@ -23,7 +23,7 @@ numpy==2.4.6
     #   shapely
 ok-script==1.0.176
     # via -r requirements.in
-onnxocr-ppocrv5==0.0.18
+onnxocr-ppocrv5==0.0.20
     # via -r requirements.in
 opencc==1.4.1
     # via -r requirements.in
