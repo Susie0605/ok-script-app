@@ -22,7 +22,7 @@ Install [Python 3.12.10](https://www.python.org/downloads/release/python-31210/)
 py -3.12 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-python -m pip install -r requirements.txt --upgrade
+python -m pip install --no-deps -r requirements.txt --upgrade
 ```
 
 Administrator privileges are normally unnecessary. If the target game runs as administrator, launch the automation app at the same privilege level or capture and input may not work.

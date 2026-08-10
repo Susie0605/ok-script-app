@@ -22,7 +22,7 @@ clone 完成后，可以选择以下任一方式初始化项目：
 py -3.12 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-python -m pip install -r requirements.txt --upgrade
+python -m pip install --no-deps -r requirements.txt --upgrade
 ```
 
 通常不需要管理员权限。如果目标游戏以管理员权限运行，自动化程序也需要以相同权限启动，否则截图或输入可能无法生效。

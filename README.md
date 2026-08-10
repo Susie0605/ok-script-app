@@ -24,7 +24,7 @@ ok-script-app 是一个基于 [ok-script](https://github.com/ok-oldking/ok-scrip
 py -3.12 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-python -m pip install -r requirements.txt --upgrade
+python -m pip install --no-deps -r requirements.txt --upgrade
 python main_debug.py
 ```
 
