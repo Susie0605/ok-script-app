@@ -1,6 +1,6 @@
 ---
 name: initialize-ok-script-app
-description: Initialize a repository created from the ok-script-app template for a Windows, Android-emulator, or browser game. Use when Codex needs to collect project requirements and configure app identity, one or more runtime targets, icons, update repositories, the first automation task, MirrorChyan integration, and GitHub tag-based packaging.
+description: Initialize a repository created from the ok-script-app template for a Windows, Android-emulator, or browser game. Use when Codex needs to collect project requirements and configure app identity, runtime targets, icons, update repositories, the first automation task, MkDocs documentation, MirrorChyan integration, and GitHub tag-based packaging.
 ---
 
 # Initialize an ok-script App
@@ -26,7 +26,7 @@ Allow unknown optional values. Offer to retain safe template defaults or inspect
 
 ## Inspect before editing
 
-- Read `README.md`, `src/config.py`, `pyappify.yml`, `.github/workflows/build.yml`, and relevant files under `src/tasks`.
+- Read `README.md`, `src/config.py`, `pyappify.yml`, `mkdocs.yml`, `.github/workflows`, relevant files under `src/tasks`, and the relevant Chinese and English pages under `docs`.
 - Check `git status` and preserve unrelated user changes.
 - Search for remaining `ok-script-app`, `ok-oldking`, template repository URLs, and template-only release integrations.
 - Use the repository-local `.venv` for Python commands when it exists.
@@ -57,12 +57,18 @@ Allow unknown optional values. Offer to retain safe template defaults or inspect
    - Follow the repository's `$ok-script-tasks` skill for task structure.
    - Use `$ok-script-codegen` when implementing automation actions from a behavior description or screenshots.
    - Keep user-facing task strings translatable and use `$ok-script-i18n` when translations are requested.
-6. Update README identity or setup details when they still describe the template instead of the initialized project.
+6. Update the documentation site:
+   - Set `site_name`, `site_description`, `repo_name`, `repo_url`, and `edit_uri` in `mkdocs.yml` from the initialized project.
+   - Update template identity, repositories, installer names, targets, links, and setup details in both the Chinese pages under `docs/` and the English pages under `docs/en/`.
+   - Keep the two languages structurally aligned and update `mkdocs.yml` navigation when pages are added, moved, or removed.
+   - Retain `.github/workflows/docs.yml` when the user wants GitHub Pages; otherwise explain that it may be removed.
+7. Keep `README.md` and `README_en.md` as concise repository landing pages that link to the canonical MkDocs documentation.
 
 ## Verify
 
 - Parse modified Python files with `python -m compileall` or run the relevant tests using the local `.venv`.
 - Validate YAML syntax when a YAML parser is available.
+- Install `requirements-docs.txt` in the local `.venv` and run `python -m mkdocs build --strict` after documentation changes.
 - Run `python main_debug.py` only when launching the GUI is appropriate for the environment.
 - Search again for stale template names and URLs; distinguish intentional upstream documentation/action references from project-specific leftovers.
 - Show the resulting diff and summarize any values still awaiting user input.

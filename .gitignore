@@ -27,6 +27,7 @@ click_screenshots/
 test_scripts/
 screenshots/
 thread_dumps.txt
+site/
 # C extensions
 *.so
 *.bat
