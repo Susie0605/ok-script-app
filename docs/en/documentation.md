@@ -37,6 +37,7 @@ After creating a project from this template, update `site_name`, `site_descripti
 ```text
 mkdocs.yml                  MkDocs configuration and navigation
 requirements-docs.txt      Documentation build dependencies
+pyproject.toml             Source of truth for direct dependencies and profiles
 docs/                       Chinese documentation
 docs/en/                    English documentation
 docs/images/                Shared images

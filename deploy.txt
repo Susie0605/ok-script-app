@@ -4,6 +4,7 @@ main.py
 main_debug.py
 icons
 requirements.txt
+requirements-web.txt
 README.md
 i18n
 assets

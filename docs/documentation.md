@@ -37,6 +37,7 @@ python -m mkdocs build --strict
 ```text
 mkdocs.yml                  MkDocs 配置和导航
 requirements-docs.txt      文档构建依赖
+pyproject.toml             所有直接依赖和 profile 的唯一配置源
 docs/                       中文文档
 docs/en/                    英文文档
 docs/images/                两种语言共用的图片

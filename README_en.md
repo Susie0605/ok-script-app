@@ -28,6 +28,10 @@ python -m pip install --no-deps -r requirements.txt --upgrade
 python main_debug.py
 ```
 
+Direct dependencies are managed in `pyproject.toml`. `requirements.txt` is the
+compiled Qt profile and `requirements-web.txt` is the compiled web profile; do
+not edit these generated lock files directly.
+
 See the [Quick start](docs/en/getting-started.md) for repository initialization, runtime target configuration, the first task, and tag-based packaging.
 
 ## Build the Documentation Site

@@ -28,6 +28,10 @@ python -m pip install --no-deps -r requirements.txt --upgrade
 python main_debug.py
 ```
 
+直接依赖统一维护在 `pyproject.toml`。`requirements.txt` 是 Qt profile 的锁定
+文件，`requirements-web.txt` 是 Web profile 的锁定文件；请勿直接编辑这些
+生成文件。
+
 详细的仓库初始化、目标配置、首个任务和 tag 打包流程请阅读[快速开始](docs/getting-started.md)。
 
 ## 构建文档网站

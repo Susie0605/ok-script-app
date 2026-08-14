@@ -4,6 +4,8 @@
 
 - `.github/workflows/build.yml`: watches `v*` tags, tests, syncs updates, packages, and creates a GitHub Release.
 - `pyappify.yml`: defines the app name, entry point, icon, Python version, and update repositories.
+- `pyproject.toml`: defines the Qt, web, and documentation dependency profiles.
+- `requirements.txt` and `requirements-web.txt`: compiled installation locks for the TOML profiles.
 - `deploy.txt`: lists files copied to a dedicated update repository.
 - `.github/workflows/mirrorchyan_*.yml`: optional MirrorChyan upload and release-note workflows.
 
@@ -45,3 +47,15 @@ git push origin v0.1.0
 ```
 
 GitHub Actions runs the tests, packages the EXE, and creates a matching GitHub Release. Search `.github/workflows` once more for stale template repositories, names, or missing secrets before release.
+
+After changing dependencies, recompile the locks with the project virtual environment:
+
+```powershell
+python -m piptools compile --extra qt --strip-extras --no-header --output-file requirements.txt pyproject.toml
+python -m piptools compile --extra web --strip-extras --no-header --output-file requirements-web.txt pyproject.toml
+python -m piptools compile --extra docs --strip-extras --no-header --output-file requirements-docs.txt pyproject.toml
+```
+
+The Qt lock is installed with `--no-deps`. After compilation, remove the
+generated `pyside6` and `pyside6-addons` entries while retaining
+`pyside6-essentials`, so Fluent Widgets does not restore unused PySide6 modules.
