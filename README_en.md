@@ -23,21 +23,25 @@ The complete documentation is organized as an MkDocs site:
 ```powershell
 py -3.12 -m venv .venv
 .\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-python -m pip install --no-deps -r requirements.txt --upgrade
+$PypiIndex = "https://pypi.org/simple/"
+python -m pip install --index-url $PypiIndex --upgrade pip
+python -m pip install --index-url $PypiIndex --no-deps --upgrade -r requirements.txt
 python main_debug.py
 ```
 
 Direct dependencies are managed in `pyproject.toml`. `requirements.txt` is the
 compiled Qt profile and `requirements-web.txt` is the compiled web profile; do
-not edit these generated lock files directly.
+not edit these generated lock files directly. For the web profile, replace the
+dependency and launch commands above with `requirements-web.txt` and
+`python web_main_debug.py`, respectively. The official PyPI index URL for pip
+must include `/simple/`; `https://pypi.org/` is not a valid package index URL.
 
 See the [Quick start](docs/en/getting-started.md) for repository initialization, runtime target configuration, the first task, and tag-based packaging.
 
 ## Build the Documentation Site
 
 ```powershell
-python -m pip install -r requirements-docs.txt
+python -m pip install --index-url https://pypi.org/simple/ -r requirements-docs.txt
 python -m mkdocs serve
 ```
 

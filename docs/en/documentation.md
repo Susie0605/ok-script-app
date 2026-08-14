@@ -7,7 +7,7 @@ Documentation sources live in `docs/`; navigation and site settings live in `mkd
 Install documentation dependencies in the project virtual environment:
 
 ```powershell
-python -m pip install -r requirements-docs.txt
+python -m pip install --index-url https://pypi.org/simple/ -r requirements-docs.txt
 python -m mkdocs serve
 ```
 

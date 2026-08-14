@@ -28,7 +28,7 @@ numpy==2.5.2
     #   shapely
 ok-d3dshot==0.1.5
     # via ok-script
-ok-script==2.0.0b3
+ok-script==2.0.0b4
     # via ok-script-app (pyproject.toml)
 onnxocr-ppocrv5==0.0.20
     # via ok-script

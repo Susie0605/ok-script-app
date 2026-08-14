@@ -7,7 +7,7 @@
 在项目虚拟环境中安装文档依赖：
 
 ```powershell
-python -m pip install -r requirements-docs.txt
+python -m pip install --index-url https://pypi.org/simple/ -r requirements-docs.txt
 python -m mkdocs serve
 ```
 
