@@ -2,6 +2,8 @@ src
 ok
 main.py
 main_debug.py
+web_main.py
+web_main_debug.py
 icons
 requirements.txt
 requirements-web.txt
