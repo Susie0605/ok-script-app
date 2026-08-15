@@ -50,9 +50,6 @@ jobs:
       - name: inline_ok_requirements #把ok-script加入源码, 从requirements.txt中删除以提高升级更新速度
         run: |
           python -m ok.update.inline_ok_requirements --tag ${{ github.ref_name }}
-          (Get-Content requirements-web.txt) |
-            Where-Object { $_ -notmatch '^ok-script==' } |
-            Set-Content -Encoding utf8 requirements-web.txt
 
       - name: Run tests
         run: |
